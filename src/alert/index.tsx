@@ -1,10 +1,12 @@
 import React from 'react'
 import t from 'prop-types'
 
-import './index.less'
-
 export interface AlertProps {
-  kind?: 'info' | 'positive' | 'negative' | 'warning'
+  /**
+   * @description       Alert 的类型
+   * @default           'info'
+   */
+  kind?: 'info' | 'success' | 'error' | 'warning'
 }
 
 export type KindMap = Record<Required<AlertProps>['kind'], string>
@@ -12,10 +14,10 @@ export type KindMap = Record<Required<AlertProps>['kind'], string>
 const prefixCls = 'bouquet-alert'
 
 const kinds: KindMap = {
-  info: '#5352ED',
-  positive: '#2ED573',
-  negative: '#FF4757',
-  warning: '#FFA502',
+  info: '#9ab7e0',
+  success: '#97e3c1',
+  warning: '#ffe99b',
+  error: '#ff8888',
 }
 
 const Alert: React.FC<AlertProps> = ({ children, kind = 'info', ...rest }) => (
@@ -31,7 +33,7 @@ const Alert: React.FC<AlertProps> = ({ children, kind = 'info', ...rest }) => (
 )
 
 Alert.propTypes = {
-  kind: t.oneOf(['info', 'positive', 'negative', 'warning']),
+  kind: t.oneOf(['info', 'success', 'error', 'warning']),
 }
 
 export default Alert
