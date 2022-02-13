@@ -2,7 +2,7 @@
 title: Bouquet Design
 hero:
   title: Bouquet Design
-  desc: 一个内部研发团队使用的 UI 组件库示例
+  desc: 前端团队 React UI 组件库示例
   actions:
     - text: 快速上手
       link: /getting-started

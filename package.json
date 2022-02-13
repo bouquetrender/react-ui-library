@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "typings": "lib/index.d.ts",
   "scripts": {
     "commit": "git-cz",
     "dev": "dumi dev",
     "build:site": "rimraf doc-site && dumi build",
+    "build:types": "tsc -p tsconfig.build.json && cpr lib esm",
     "preview:site": "cross-env SITE_BUILD_ENV=PREVIEW npm run build:site && serve doc-site",
     "deploy:site": "npm run build:site && gh-pages -d doc-site"
   },
